@@ -7,8 +7,8 @@ export async function connectionMongo(){
 
     try{
         //conectar bases de datos we
-         await mongoose.connect(process.env.DB_URL);
-        console.log('mira we, sin manos logre vincular esta madre ');
+         await mongoose.connect(process.env.DB_URL, {dbName:'Thelittleprinceland'} );
+        console.log('LOGRAMOS VINCULAR ESTO WE ');
 
     }catch(error) {
         console.error ('no we, no pudiste ' + error);

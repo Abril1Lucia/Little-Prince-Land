@@ -17,4 +17,4 @@ const imageSchema = new mongoose.Schema({
 //el primer parametro es el name de la coleccion
 //el segundo parametro es la estructura de datos we
 
-export const imageModel = mongoose.model ('image', imageSchema);
+export const imageModel = mongoose.model('image', imageSchema);
