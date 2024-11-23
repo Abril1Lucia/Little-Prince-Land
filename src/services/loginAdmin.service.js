@@ -19,7 +19,7 @@ const loginAdmins = async (request, response) =>{
               .status(404)
               .json({
                 mensaje:
-                  "no c encuentra el usuario, se fue a tomar tinto, vaya, registrese y vuelva a ver si volvio :)",
+                  "no c encuentra, se fue a tomar tinto, registrese y vuelva a ver si volvio :)",
               });
           }
 
@@ -27,12 +27,12 @@ const loginAdmins = async (request, response) =>{
   
   
           if(!isValidPassword){
-              return response.status(401).json({mensaje:'no me jodas.. se mas creativo, pon otra contraseña hasta que lo hagas bien >:('})
+              return response.status(401).json({mensaje:'pon otra contraseña hasta que lo hagas bien >:('})
           }
 
           const payload ={
             id:adminsFound._id,
-            name:adminsFound.fullName,
+            name:adminsFound.fullname,
             isAdmin:true 
         }
 
@@ -47,7 +47,7 @@ const loginAdmins = async (request, response) =>{
     } catch (error) {
 
         return response.status(400).json({
-            mensaje:'hubo un error al iniciar la sesion',
+            mensaje:'hubo un error al iniciar la sesion, perdon amo... no le pegue a dobby ;-;',
             error: error.message || error
         })
         

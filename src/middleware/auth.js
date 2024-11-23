@@ -6,7 +6,7 @@ function auth(requiredRole) {
     return async (recuest, response, next) => {
 
         let token = recuest.headers['authorization'];
-        console.log('mira el token... ta bien bonito :)--------- ' + token)
+        console.log('mira el token... ta bien bonito :) k orgullo--------- ' + token)
 
         if(!token){
             return response.status(401).json({
@@ -31,13 +31,15 @@ function auth(requiredRole) {
                     })
                 }
 
-                request.user=decoded
+                recuest.user=decoded
             
             
         } catch (error) {
-            return response.status(500)
-            mensaje: 'no se pudo autenticar el token ;-; perdon'
-            problema: error.message || error
+            return response.status(500).json({
+                mensaje: 'no se pudo autenticar el token ;-; perdon',
+                problema: error.message || error
+            })
+           
         }
 
         next();
